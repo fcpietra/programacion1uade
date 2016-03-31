@@ -1,0 +1,15 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+main (){
+	int integer1, integer2, sum;
+
+	printf("Ingrese un entero\n");
+	scanf("%d", &integer1);
+	printf("Ingrese otro entero\n");
+	scanf("%d", &integer2);
+	sum = integer1+integer2;
+	printf("La suma es %d\n", sum);
+
+	return 0;
+}

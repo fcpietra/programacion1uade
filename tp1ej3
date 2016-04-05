@@ -1,0 +1,28 @@
+/*Realizar una función que reciba el año como parámetro y devuelva verdadero si el año es bisiesto o falso
+si no lo es. Se recuerda que un año es bisiesto cuando es divisible por 4.
+Sin embargo aquellos años que sean divisibles por 4 y también por 100 no son bisiestos, a menos que también
+sean divisibles por 400.
+Por ejemplo, 1900 no fue bisiesto pero sí lo fueron el 2000 y 2004.*/
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+main(){
+	int Bisiesto (int Anio);
+	int Anio;
+	printf ("Ingrese el anio\n");
+	scanf ("%d", & Anio);
+	if (Bisiesto(Anio) == -1)
+		printf ("El anio NO es bisiesto.\n");
+	else
+		printf ("El anio es bisiesto.\n", Bisiesto (Anio));
+}
+int Bisiesto (int Anio){
+	int bis = -1;
+	if (Anio%4 == 0 && Anio%100 != 0){
+		bis = 1;
+	}
+	if (Anio%4 == 0 && Anio%100 == 0 && Anio%400 == 0){
+		bis = 1;
+	}
+	return bis;
+}
+		

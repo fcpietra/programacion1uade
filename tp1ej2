@@ -1,0 +1,37 @@
+/*Hacer una función que reciba tres valores enteros positivos y devuelva el mayor estricto de los tres.
+En caso de no existir devolver -1. No usar operadores lógicos.*/
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+main(){
+	int Mayor(int A, int B, int C);
+	int A, B, C;
+	printf ("Escriba un numero entero\n");
+	scanf ("%d", &A);
+	printf ("Escriba un numero entero\n");
+	scanf ("%d", &B);
+	printf ("Escriba un numero entero\n");
+	scanf ("%d", &C);
+	if (Mayor(A, B, C) == -1)
+		printf("No hay mayor\n");
+	else
+		printf("El mayor valor ingresado es %d\n", Mayor(A, B, C));
+}
+int Mayor(int A, int B, int C){
+	int res = -1;
+	if (A>B){
+		if(A>C){
+			res = A;
+		}
+	}
+	if (B>A){
+		if(B>C){
+			res = B;
+		}
+	}
+	if (C>A){
+		if (C>B){
+			res = C;
+		}
+	}
+	return res;
+}

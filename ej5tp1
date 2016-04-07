@@ -1,0 +1,33 @@
+/*Realizar una función que reciba como parámetros día, mes y año indique si la fecha es un fecha gregoriana válida.*/
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+main(){
+	int retraso (int R);
+	int R;
+	char tipo;
+	printf ("Ingrese el tipo de video: (D)ibujos, (E)strenos, (O)tros\n");
+	scanf ("%c", & tipo);
+	if (tipo == "D" || tipo == "E" || tipo == "O"){
+		scanf ("%c", & tipo);
+	}
+	else{
+			printf ("Ingrese el tipo de video: (D)ibujos, (E)strenos, (O)tros\n");
+	}
+	printf ("Ingrese la cantidad de días de retardo (negativo si es anticipado)\n");
+	scanf ("%d", & R);
+	if (retraso(R) == -1)
+		printf ("La fecha NO corresponde al calendario gregoriano.\n");
+	else
+		printf ("La fecha corresponde al calendario gregoriano.\n", retraso (R));
+}
+
+int retraso (int R){
+	int ret = -1;
+	if (R > 0){
+		ret = R * 0.5 + 0.5;
+	}
+	if (R <= 0){
+		ret = 0;
+	}
+	return ret;
+}

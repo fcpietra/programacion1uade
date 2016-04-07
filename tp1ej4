@@ -2,7 +2,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 main(){
-	int fechaGreg (int Greg);
+	int fechaGreg (int D, int M, int A);
 	int D, M, A;
 	printf ("Ingrese el dia\n");
 	scanf ("%d", & D);
@@ -10,14 +10,25 @@ main(){
 	scanf ("%d", & M);
 	printf ("Ingrese el anio\n");
 	scanf ("%d", & A);
-	if (fechaGreg(Greg) == -1)
+	if (fechaGreg(D, M, A) == -1)
 		printf ("La fecha NO corresponde al calendario gregoriano.\n");
 	else
-		printf ("La fecha corresponde al calendario gregoriano.\n", fechaGreg (Greg));
+		printf ("La fecha corresponde al calendario gregoriano.\n", fechaGreg (D, M, A));
 }
-int fechaGreg (int Greg){
+
+int fechaGreg (int D, int M, int A){
 	int greg = -1;
-	if (D == 1||2||3||4||5){
-	
+	if (D > 0 && D < 32 && M == 1 || M == 3 || M == 5 || M == 7 || M == 8 || M == 10 || M == 12){
+		greg = 1;
+	}
+	if (D > 0 && D < 31 && M == 4 || M == 6 || M == 9 || M == 11){
+		greg = 1;
+	}
+	if (D > 0 && D < 30 && M == 2 && A%4 == 0 && A%100 != 0){
+		greg = 1;
+	}
+	if (D > 0 && D < 30 && M == 2 && A%4 == 0 && A%100 == 0 && A%400 == 0){
+		greg = 1;
+	}
+	return greg;
 }
-		

@@ -1,0 +1,33 @@
+/*Hacer una función que permita invertir una secuencia de caracteres.*/
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+void revertir (char rev[], char cad1[30]);
+int main(){
+	char cad1 [30];
+	char rev [30];
+
+	printf ("Ingrese una palabra: ");
+	scanf ("%s", cad1);
+
+	revertir (rev, cad1);
+	printf ("La palabra invertida es: %s", rev);
+
+	return 0;
+}
+
+void revertir (char rev[], char cad1[30]){
+	int i = 0, cant = 0;
+	while (cad1[i] != '\0'){
+		i++;
+		cant=cant+1;
+	}
+	cant = cant-1;
+	i=0;
+	while (cant >= 0){
+		rev[i] = cad1[cant];
+		cant--;
+		i++;
+	}
+	rev[i]='\0';
+}

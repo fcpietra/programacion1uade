@@ -5,6 +5,7 @@ En caso de no existir devolver -1. No usar operadores lógicos.*/
 main(){
 	int Mayor(int A, int B, int C);
 	int A, B, C;
+	
 	printf ("Escriba un numero entero\n");
 	scanf ("%d", &A);
 	printf ("Escriba un numero entero\n");
@@ -15,9 +16,12 @@ main(){
 		printf("No hay mayor\n");
 	else
 		printf("El mayor valor ingresado es %d\n", Mayor(A, B, C));
+	
+	return 0;
 }
 int Mayor(int A, int B, int C){
 	int res = -1;
+	
 	if (A>B){
 		if(A>C){
 			res = A;
@@ -33,5 +37,6 @@ int Mayor(int A, int B, int C){
 			res = C;
 		}
 	}
+
 	return res;
 }

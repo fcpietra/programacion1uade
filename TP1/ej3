@@ -5,15 +5,20 @@ sean divisibles por 400.
 Por ejemplo, 1900 no fue bisiesto pero sí lo fueron el 2000 y 2004.*/
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+
+int Bisiesto (int Anio);
+
 main(){
-	int Bisiesto (int Anio);
 	int Anio;
 	printf ("Ingrese el anio\n");
 	scanf ("%d", & Anio);
+
 	if (Bisiesto(Anio) == -1)
 		printf ("El anio NO es bisiesto.\n");
 	else
 		printf ("El anio es bisiesto.\n", Bisiesto (Anio));
+		
+	return 0;
 }
 int Bisiesto (int Anio){
 	int bis = -1;

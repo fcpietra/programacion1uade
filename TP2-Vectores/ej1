@@ -1,0 +1,19 @@
+/*Realizar una función que imprima los valores de un vector de N posiciones, desde la posición máxima a la posición mínima.*/
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#define MAX 10
+
+main(){
+	int i, V [MAX];
+
+	for (i = 0; i < MAX; i++){
+		printf ("Ingrese un numero: \n");
+		scanf ("%d", & V[i]);
+	}
+	
+	for (i = MAX; i >= 0; i--){
+		printf ("%4d\n", V[i]);
+	}
+
+	return 0;
+}

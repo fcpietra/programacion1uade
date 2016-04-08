@@ -1,0 +1,21 @@
+/*Realizar una función que devuelva la suma de todos los elementos de un vector de N elementos.*/
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#define MAX 10
+
+main(){
+	int i, sum = 0, V [MAX];
+
+	for (i = 0; i < MAX; i++){
+		printf ("Ingrese un numero: \n");
+		scanf ("%d", & V[i]);
+	}
+	
+	for (i = 0; i < MAX; i++){
+		sum = sum + V[i];
+	}
+	
+	printf ("La suma de los valores del vector es: %d\n", sum);
+
+	return 0;
+}

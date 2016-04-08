@@ -2,8 +2,10 @@
 En caso de no existir devolver -1. No usar operadores lógicos.*/
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+
+int Mayor(int A, int B, int C);
+
 main(){
-	int Mayor(int A, int B, int C);
 	int A, B, C;
 	
 	printf ("Escriba un numero entero\n");

@@ -1,8 +1,10 @@
 /*Realizar una función que reciba como parámetros día, mes y año indique si la fecha es un fecha gregoriana válida.*/
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+
+int fechaGreg (int D, int M, int A);
+
 main(){
-	int fechaGreg (int D, int M, int A);
 	int D, M, A;
 	printf ("Ingrese el dia\n");
 	scanf ("%d", & D);
@@ -10,10 +12,13 @@ main(){
 	scanf ("%d", & M);
 	printf ("Ingrese el anio\n");
 	scanf ("%d", & A);
+
 	if (fechaGreg(D, M, A) == -1)
 		printf ("La fecha NO corresponde al calendario gregoriano.\n");
 	else
 		printf ("La fecha corresponde al calendario gregoriano.\n", fechaGreg (D, M, A));
+
+	return 0;
 }
 
 int fechaGreg (int D, int M, int A){

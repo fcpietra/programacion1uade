@@ -22,7 +22,8 @@ main(){
 float costo (pags){
 	
 	float cst;
-		if (pags <= 300){
+	
+	if (pags <= 300){
 		cst = (float)pags * 0.02 + 5;
 	}
 	if (pags > 300){

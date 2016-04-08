@@ -11,7 +11,7 @@ int main(){
 	scanf ("%s", cad1);
 
 	revertir (rev, cad1);
-	printf ("La palabra invertida es: %s", rev);
+	printf ("La palabra invertida es: %s\n", rev);
 
 	return 0;
 }

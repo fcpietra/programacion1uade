@@ -1,0 +1,31 @@
+/*Hacer una función que devuelva la cantidad de palabras (separados por uno o más espacios) que tiene una frase.*/
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int cantPal (int pal, char frase[]);
+
+int main(){
+	char frase[] = "Esto es una frase\n";
+	int pal = 0;
+	
+	cantPal (pal, frase);
+	printf ("La frase tiene %d palabras\n", pal, frase);
+
+	return 0;
+}
+
+int cantPal (int pal, char frase[]){
+
+	int i = 0, pal = 0;
+	while (i != '\0'){
+		if (frase[i] != ' ')
+			pal=pal;
+		if (frase[i] == ' '&&frase[i+1] != ' ')
+			pal=pal+1;
+		else
+			pal=pal;
+		i++;
+	}
+	pal=pal+1;
+	return pal;
+}

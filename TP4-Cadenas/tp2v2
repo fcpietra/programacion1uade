@@ -1,0 +1,56 @@
+/*Hacer una función que determine si una secuencia de caracteres es capicúa.*/
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+/*void MinMay (char cadena[]);
+int capicua (int cap);
+
+int main(){
+	char cadena [30];
+
+	printf ("Ingrese una palabra: ");
+	scanf ("%s", cadena);
+
+	if capicua (cap) == -1)
+		printf ("La cadena NO es capicua\n");
+	else
+		printf ("La cadena es capicua\n", capicua (cap));
+
+	return 0;
+	
+}
+
+void MinMay (char cadena[]){
+	while (cad1[i] != '\0'){
+		if (cad[i]>='a' && cad[i]<='z')
+			cad[i]=cad[i] - ('a'-'A');
+			i++;
+	}
+}
+
+int capicua (int cap){
+	int cap = -1, i = 0, j = 30;
+	
+	for(*/
+int main(){
+	int i, lim, c = 0, aux;
+	char cad[80];
+	printf("Ingrese una frase:\n");
+	scanf("%s", cad);
+	for(i = 0; cad[i]; i++)
+		;
+	if(i % 2 == 0)
+		lim = i/2;
+	else
+		lim = (i-1)/2;
+	aux = i;
+	for(i = 0; cad[i]; i++){
+		if(cad[i] != cad[aux-1-i])
+			c = 1;
+	}
+	if(c == 1)
+		printf("No es cap\n");
+	else
+		printf("Es cap\n");
+	return 0;
+}

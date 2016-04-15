@@ -1,0 +1,27 @@
+/*Hacer una función strNcpy() que permita extraer una sub-cadena, indicando la posición inicial y la cantidad de caracteres.
+Ejemplo, dada la secuencia: “El número de teléfono es 4356-7890. “ extraer la sub-cadena que comienza en la posición 26,
+la cantidad de 9 caracteres.*/
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main (){
+	char cad1 [] = "El número de teléfono es 4356-7890.";
+	char cad2 [36];
+	int pos, cant, i, j=0;
+
+	printf ("Ingerese la posicion inicial: ");
+	scanf ("%d", &pos);
+
+	printf ("Ingrese la cantidad de espacios: ");
+	scanf ("%d", &cant);
+
+	for (i=pos; i<=pos+cant; i++){
+		cad2[j]=cad1[i];
+		j++;
+	}
+	cad2[j]='\0';
+
+	printf ("%s\n", cad2);
+
+	return 0;
+	}

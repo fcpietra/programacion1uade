@@ -1,0 +1,29 @@
+/*Hacer una función que devuelva la cantidad de palabras (separados por uno o más espacios) que tiene una frase.*/
+#define _CRT_SECURE_NO_WARNINGS
+#define MAX 21
+#include <stdio.h>
+
+int main (){
+	char digitos [MAX];
+	int cont=0, i=0, dif=0;
+
+	printf("Ingrese los digitos: ");
+	scanf("%s", digitos);
+
+	while (digitos[i] != '\0'){
+		cont++;
+		i++;
+	}
+
+	if (cont%8 != 0){
+		dif = MAX-cont;
+		for (i=MAX-dif; i==0;i--)
+			digitos[i+dif]=digitos[i];
+		for (i=0; i<dif;i++)
+			digitos[i]=0;
+	}
+
+
+
+	return 0;
+}

@@ -1,8 +1,11 @@
-/*Hacer una función que permita eliminar una sub-cadena a partir de una posición y un tamaño dados*/
+/*Realizar una función que reciba tres números y devuelva “N” si estos no corresponden a las medidas de los
+lados de un triángulo, “E” si corresponden a un triángulo equilátero, “I” si corresponden a un triángulo isósceles y
+“S” si corresponde a un triángulo escaleno. No usar operadores lógicos.*/
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
 int esTriangulo (int E, int S, int I);
+int tipoTri (int E, int S, int I);
 
 int main (){
 	int E, S, I;
@@ -18,9 +21,16 @@ int main (){
 	if (esTriangulo (E, S, I) == -1)
 		printf ("N\n");
 	
-	else
-		printf ("algo");
+	else{
+		if (tipoTri (E,S,I)==1)
+			printf ("E\n");
+	
+		if (tipoTri (E,S,I)==2)
+			printf ("S\n");
 
+		if (tipoTri (E,S,I)==3)
+			printf ("I\n");
+	}
 
 	return 0;
 }
@@ -41,4 +51,18 @@ int esTriangulo (int E, int S, int I){
 	}
 
 	return tri;
+}
+
+int tipoTri (int E, int S, int I){
+	int tipo=2;
+	if (E==S==I)
+		tipo=1;
+	if (E!=S){
+		if (E!=I){
+			if (I!=S)
+				tipo=3;
+		}
+	}
+	
+	return tipo;
 }

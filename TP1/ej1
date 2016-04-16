@@ -1,0 +1,44 @@
+/*Hacer una función que permita eliminar una sub-cadena a partir de una posición y un tamaño dados*/
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int esTriangulo (int E, int S, int I);
+
+int main (){
+	int E, S, I;
+
+	printf ("Ingrese la longitud del lado A: ");
+	scanf ("%d", &E);
+	printf ("Ingrese la longitud del lado B: ");
+	scanf ("%d", &S);
+	printf ("Ingrese la longitud del lado C: ");
+	scanf ("%d", &I);
+
+	esTriangulo (E, S, I);
+	if (esTriangulo (E, S, I) == -1)
+		printf ("N\n");
+	
+	else
+		printf ("algo");
+
+
+	return 0;
+}
+
+int esTriangulo (int E, int S, int I){
+	int tri=-1;
+	if (E+S>I){
+		if (E-S<I)
+			tri = 1;
+	}
+	if (E+I>S){
+		if (E-I<S)
+			tri = 1;
+	}
+	if (S+I>E){
+		if (S-I<E)
+			tri = 1;
+	}
+
+	return tri;
+}

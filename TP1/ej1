@@ -17,7 +17,7 @@ int main (){
 	printf ("Ingrese la longitud del lado C: ");
 	scanf ("%d", &I);
 
-	esTriangulo (E, S, I);
+	//esTriangulo (E, S, I);
 	if (esTriangulo (E, S, I) == -1)
 		printf ("N\n");
 	
@@ -55,8 +55,12 @@ int esTriangulo (int E, int S, int I){
 
 int tipoTri (int E, int S, int I){
 	int tipo=2;
-	if (E==S==I)
+	if (E==S){
+		if (E==I){
+			if (E==I)
 		tipo=1;
+		}
+	}
 	if (E!=S){
 		if (E!=I){
 			if (I!=S)

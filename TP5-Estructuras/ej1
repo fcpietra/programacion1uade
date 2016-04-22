@@ -1,0 +1,28 @@
+/*Definir estructuras para almacenar los siguientes tipos de datos:
+a)	fecha
+b)	hora
+c)	Datos de un producto
+código de barras (21 dígitos)
+nombre  (cadena de caracteres)
+precio unitario (número real)
+stock (número entero)
+fecha de actualización de stock (día, mes, año)*/
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+struct sfecha{
+	int dia, mes, anio;
+};
+
+struct shora{
+	int hora, min;
+};
+
+struct sproducto{
+	char cod[21];
+	char nombre[40];
+	float precio;
+	int stock;
+	struct sfecha fechaActStock;
+};

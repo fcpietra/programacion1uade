@@ -1,0 +1,35 @@
+/*Escribir una función strright(<cadena>,<n>) que permita obtener una subcadena de caracteres con
+los últimos <n> caracteres de la cadena pasada como parámetro.
+La función no hará nada si el parámetro <n> es menor que cero o mayor que la longitud de la cadena
+*/
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+
+char strright (int esp, char cadena[80]);
+
+int main(){
+	int esp=0;
+	char cadena[80];
+
+	printf ("Ingrese una frase: ");
+	gets (cadena);
+	puts (cadena);
+	
+	printf ("Ingrese la cantidad de espacios a devolver: ");
+	scanf ("%d", &esp);
+	fflush (stdin);
+
+	return 0;
+}
+
+char strright (int esp, char cadena [80]{
+	int longitud=0, i=0;
+	char cadenaCopia[80];
+
+	strcpy (cadenaCopia, cadena[&esp]);
+
+	for (i=longitud-esp; i=longitud;i++){
+		;
+	}

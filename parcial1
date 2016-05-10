@@ -1,0 +1,48 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int capicua (char frase [], int pos, int largo);
+int main (){
+	int pos, largo, cap;
+	char frase [] = "Es dificil reconocer el error";
+	
+	printf ("Ingrese una posicion: ");
+	scanf ("%d", &pos);
+
+	printf ("Ingrese una longitud: ");
+	scanf ("%d", &largo);
+
+	if (capicua(frase, pos, largo)==1)
+		printf ("El segmento es capicua\n");
+	if (capicua(frase, pos, largo)==0)
+		printf ("El segmento no es capicua\n");
+
+	return 0;
+}
+
+int capicua (char frase [], int pos, int largo){
+	char fraseCpy [70];
+	int i=pos, j=0, cap;
+	while(largo>0){
+		fraseCpy[j]=frase[i];
+		largo--;
+		i++;
+		j++;
+	}
+	fraseCpy[j]='\0';
+	
+	i=0;
+	j--;
+
+	while (fraseCpy[i]==fraseCpy[j] && i<=j){
+		i++;
+		j--;
+	}
+	
+	if (i>j)
+		cap=1;
+	else
+		cap=0;
+
+	return cap;
+}

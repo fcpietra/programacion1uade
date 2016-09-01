@@ -1,0 +1,74 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#define Max 3
+void llenado_matriz(int matriz[Max][Max]); //Prototipo procedimiento llenado
+void visualizar_matriz(int matriz[Max][Max]); //Prototipo procedimiento ver
+void crear_vector(int matriz[Max][Max],int diagonal[Max]);//Prototipo procedimiento crear vector
+void visualizar_vector(int diagonal[Max]); //Prototipo procedimiento ver Columna Fila
+
+int main(){
+int opcion, matriz[Max][Max];
+int diagonal[Max];
+
+do{
+printf("Menu: \n");
+printf("opcion 1. Llenar Matriz \n");
+printf("opcion 2. Ver Matriz \n");
+printf("opcion 3. Crear Vector diagonal principal \n");
+printf("opcion 4. Ver vector \n");
+printf("opcion 5. Salir \n");
+printf("Escoja opcion : ");
+scanf("%d",&opcion);
+
+switch(opcion){
+ case 1: llenado_matriz(matriz);
+break;
+ case 2: visualizar_matriz(matriz);
+break;
+ case 3: crear_vector (matriz,diagonal);
+break;
+ case 4: visualizar_vector (diagonal);
+break;
+ case 5: printf("Gracias por usar el programa\n");
+break;
+ default: printf("Opcion Errada. \n");
+break;
+}
+}
+while (opcion!=5);
+return 0;
+}
+void llenado_matriz(int matriz[Max][Max]) {
+	int f,c;
+	for(f=0;f<Max;f++){
+		for(c=0;c<Max;c++){
+			printf("Introduzca el valor en la posicion F:%d, C:%d ",f+1,c+1);
+			scanf ("%d",&matriz[f][c]);
+		}
+	}
+	system("pause");
+	system("cls");
+}
+void visualizar_matriz(int matriz[Max][Max]){
+	int f,c;
+	for(f=0;f<Max;f++){
+		for(c=0;c<Max;c++){
+			printf("%d ",matriz[f][c]);
+		}
+		printf("\n");
+	}
+	printf("\n");
+}
+void crear_vector(int matriz[Max][Max],int diagonal[Max]){
+	int f;
+	for (f=0;f<Max;f++){
+		diagonal[f]=matriz[f][f];
+	}
+	system("cls");
+}
+void visualizar_vector(int diagonal[Max]){
+	int i;
+	for(i=0;i<Max;i++)
+		printf("%d \n",diagonal[i]);
+}

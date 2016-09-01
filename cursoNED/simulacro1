@@ -1,0 +1,58 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+
+void llenadoMatriz (int productos[10][5]);//carga de valores en la matriz. Filas=clientes, Columnas=productos
+void crearPedidos(int productos[10][5], int cantProd[5]);//suma las celdas por columnas para tener totales de pedidos por productos
+void verPedidos(int cantProd[5]);//visualiza las cantidades pedidas por producto
+void facturar(int productos[10][5]);//muestra el importe a cobrar de cada cliente
+
+int main(){
+	int productos[10][5], cantProd[5];
+	int min=212, fla=212, bag=198, muf=198;
+	float peb=127.6;
+
+	llenadoMatriz(productos);
+	crearPedidos(productos, cantProd);
+	verPedidos(cantProd);
+	facturar(productos);
+
+	return 0;
+}
+
+void llenadoMatriz(int productos[10][5]){
+	int f, c;
+	for(f=0;f<10;f++){
+		for(c=0;c<5;c++)
+			productos[f][c]=rand()%11;
+	}
+}
+
+void crearPedidos(int productos[10][5], int cantProd[5]){
+	int f,c,suma=0;
+	for(c=0;c<5;c++){
+		for(f=0;f<10;f++){
+			suma=suma+productos[f][c];
+		}
+		cantProd[c]=suma;
+		suma=0;
+	}
+}
+
+void verPedidos(int cantProd[5]){
+	printf("La cantidad de cajas de miniones pedidas es: %d \n",cantProd[0]);
+	printf("La cantidad de cajas de flautitas pedidas es: %d \n",cantProd[1]);
+	printf("La cantidad de cajas de baguetines pedidas es: %d \n",cantProd[2]);
+	printf("La cantidad de cajas de muffins pedidas es: %d \n",cantProd[3]);
+	printf("La cantidad de cajas de pebetes pedidas es: %d \n",cantProd[4]);
+}
+void facturar(int productos[10][5]){
+	int f,c,importe=0,cliente=1;
+	for(f=0;f<10;f++){
+		for(c=0;c<5;c++){
+			importe=importe+productos[f][c];
+		}
+		printf ("El cliente %d hizo un pedido por $ %d \n",cliente+1,importe);
+		importe=0;
+	}
+}

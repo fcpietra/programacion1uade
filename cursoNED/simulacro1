@@ -52,7 +52,8 @@ void facturar(int productos[10][5]){
 		for(c=0;c<5;c++){
 			importe=importe+productos[f][c];
 		}
-		printf ("El cliente %d hizo un pedido por $ %d \n",cliente+1,importe);
+		printf ("El cliente %d hizo un pedido por $ %d \n",cliente,importe);
+		cliente++;
 		importe=0;
 	}
 }

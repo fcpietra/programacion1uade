@@ -1,0 +1,69 @@
+/*pedir una cadena de máximo 50 posiciones
+usar un menu(f):
+	1.visualizar la cantidad de letras(p)
+	2.calcular el tamaño(f)
+	3.visualizar el tamaño(p)
+	4.es capicua?
+	5.salir
+*/
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+
+void cantLetras(char cadena[50]);//cuenta la cantidad de letras
+int tamanio(char cadena[50]);//mide el tamaño
+void verTamanio(char cadena[50]);//muestra el tamaño calculado en 2.
+void capicua(char cadena[50]);//comprueba si la cadena es capicua
+
+int main() {
+	char cadena[50];
+	int opcion;
+
+	printf("Ingrese una frase de hasta 50 espacios: ");
+	scanf("%s", cadena);
+	printf("%s\n", cadena);
+	
+	do {
+		printf("Menu:\n");
+		printf("1.Ver cantidad de letras\n");
+		printf("2.Calcular tamanio de la cadena\n");
+		printf("3.Ver tamanio de cadena\n");
+		printf("4.Cromprobar si es capicua\n");
+		printf("5.Salir\n");
+		scanf("%d", &opcion);
+
+		switch (opcion) {
+			case 1:cantLetras(cadena);
+				break;
+			case 2:tamanio(cadena);
+				break;
+			//case 3:verTamanio(cadena);
+				break;
+			//case 4:capicua(cadena);
+				break;
+			case 5:printf("Gracias por utilizar el programa.\n");
+				break;
+			default:printf("Opcion incorrecta. Ingrese nuevamente.\n\n");
+				break;
+		}
+	}
+	while (opcion != 5);
+	return 0;
+}
+
+void cantLetras(char cadena[50]) {
+	int x, i, car=0;
+	for (i = 0;i < strlen(cadena);i++) {
+		x=isalpha(cadena[0]);
+		if (x != 0)
+			car++;
+	}
+	printf("La cadena tiene %d caracteres alfabeticos\n\n", car);
+}
+
+int tamanio(char cadena[50]) {
+	int *xPtr;
+	px = strlen(cadena);
+}
